@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script src="./testing.js" defer></script>
+    
+    <link rel="preload" href="asset/audio/reset_flasks.wav" as="audio">
+    <link rel="preload" href="asset/audio/flask_fill1.wav" as="audio">
+    <link rel="preload" href="asset/audio/flask_fill2.wav" as="audio">
+    <link rel="preload" href="asset/audio/flask_fill3.wav" as="audio">
+
+    <link rel="preload" href="asset/1_0.png" as="image">
+    <link rel="preload" href="asset/1_1.png" as="image">
+    <link rel="preload" href="asset/1_2.png" as="image">
+    <link rel="preload" href="asset/1_3.png" as="image">
+
+    <link rel="preload" href="asset/2_0.png" as="image">
+    <link rel="preload" href="asset/2_1.png" as="image">
+    <link rel="preload" href="asset/2_2.png" as="image">
+    <link rel="preload" href="asset/2_3.png" as="image">
+    
+    <link rel="preload" href="asset/3_0.png" as="image">
+    <link rel="preload" href="asset/3_1.png" as="image">
+    <link rel="preload" href="asset/3_2.png" as="image">
+    <link rel="preload" href="asset/3_3.png" as="image">
+
+</head>
+<body style="overflow: hidden; margin: 0px;">
+    <div id="ui">
+        <div id="optionsDropdown" class="hoverToShow" title="Options" style="
+                position: absolute;
+                z-index: 998;
+                --hover-background: rgb(241, 174, 225);
+                --hover-hr-color: rgb(99, 30, 30);
+                --dropdown-title: 'Options';
+                --dropdown-item-color: rgb(25, 0, 255);
+            ">
+
+            <hr style="--hr-special-width: 90%">
+            <button class="option-button" id="audioEnable" title="Audio Enabled: true">Audio Enabled: true</button>
+            <hr>
+            <button class="option-button" id="reset" title="Reset flasks">Reset flasks</button>
+            <hr>
+            <button class="option-button" id="autosolve" title="Solve Automatically">Solve Automatically</button>
+            <hr>
+            <button class="option-button" id="hint" title="Get a hint">Hint?</button>
+            <hr>
+            <input type="number" id="solveInterval" value="500">
+            <br>
+        </div>
+    </div>
+
+    <div id="flaskTable">
+        <div id="background">
+            <img class="mainImg" src="asset/background.png" alt="">
+        </div>
+        <div id="flaskZone">
+            <img class="flaskImg" id="flask_0" src="asset/0_0.png" alt="">
+            <img class="flaskImg" id="flask_1" src="asset/0_1.png" alt="">
+            <img class="flaskImg" id="flask_2" src="asset/0_2.png" alt="">
+            <img class="flaskImg" id="flask_3" src="asset/0_3.png" alt="">
+        </div>
+        <div id="clickPolygons">
+            <div class="clickableFlask" id="flask_0_polygon" flask-index="0" style="left: 44px;"></div>
+            <div class="clickableFlask" id="flask_1_polygon" flask-index="1" style="left: 233px;"></div>
+            <div class="clickableFlask" id="flask_2_polygon" flask-index="2" style="left: 417px;"></div>
+            <div class="clickableFlask" id="flask_3_polygon" flask-index="3" style="left: 606px;"></div>
+        </div>
+        <div id="winner">
+            <img id="confetti" src="asset/confetti.gif" alt="">
+            <img id="you-win" src="asset/you win.png" alt="">
+        </div>
+    </div>
+</body>

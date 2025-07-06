@@ -1,0 +1,170 @@
+img {
+	image-rendering: pixelated;
+}
+
+#winner {
+	position: absolute;
+	z-index: 2;
+ 	opacity: 0;
+}
+
+@keyframes fadeIn {
+  0% {
+		opacity: 0; 
+	}
+  100% {
+		opacity: 1;
+	}
+}
+
+#winner[faded-in] {
+	animation: fadeIn 1.5s;
+	animation-fill-mode: forwards;
+}
+
+#you-win {
+	transform: scale(0);
+}
+
+@keyframes scaleUp {
+  0% {
+		transform: scale(0);
+	}
+  100% {
+		transform: scale(1);
+	}
+}
+
+#winner[faded-in] > #you-win {
+	animation: scaleUp 1s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+		opacity: 1; 
+	}
+  100% {
+		opacity: 0;
+	}
+}
+
+#winner {
+	animation: fadeOut 1.5s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes scaleDown {
+  0% {
+		transform: scale(1);
+	}
+  100% {
+		transform: scale(0);
+	}
+}
+
+#winner > #you-win {
+	animation: scaleDown 1s;
+	animation-fill-mode: forwards;
+}
+
+#confetti {
+	position: absolute;
+	left: 100px;
+}
+
+#you-win {
+	position: absolute;
+	left: 150px;
+	top: 100px;
+}
+
+#flaskTable {
+	position: absolute;
+	top: -70px;
+	width: 768px;
+	height: 432px;
+	transform-origin: top left;
+	transform: scale(2);
+}
+
+#background {
+	z-index: 0;
+	width: 768px;
+	height: 432px;
+	position: absolute;
+}
+
+#flaskZone {
+	z-index: 1;
+	width: 768px;
+	height: 432px;
+	position: absolute;
+}
+
+#clickPolygons {
+	z-index: 100;
+	width: 768px;
+	height: 432px;
+	position: absolute;
+}
+
+.flaskImg {
+	position: absolute;
+}
+
+.clickableFlask:hover {
+	cursor: grab;
+}
+
+.clickableFlask {
+	position: absolute;
+	top: 129px;
+	width: 125px;
+	height: 215px;
+	clip-path: polygon(0px 214px, 124px 214px, 82px 46px, 82px 0px, 43px 0px, 43px 46px);
+}
+
+.hoverToShow::before {
+	content: var(--dropdown-title, 'Please Add A Title Bro');
+	color: black;
+	font-size: 2rem;
+	font-family: sans-serif;
+}
+
+.hoverToShow {
+	width: max-content;
+	background-color: lightblue;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.2rem;
+	border: 0.2rem solid black;
+	border-radius: 0.7rem;
+	max-height: 2.5rem;
+	transition: max-height 0.1s ease-in, background-color 0.1s ease-in;
+}
+
+.hoverToShow>hr {
+	border: 1px solid var(--hover-hr-color, black);
+	width: var(--hr-special-width, 70%);
+}
+
+.hoverToShow:hover {
+	background-color: var(--hover-background, red);
+	max-height: 50rem;
+	transition: max-height 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+.option-button {
+	font-size: 1.5rem;
+	background-color: bisque;
+	border: 0.2rem solid black;
+	border-radius: 0.7rem
+}
+
+.option-button:hover {
+	background-color: rgb(194, 132, 55);
+	border: 0.2rem solid rgb(73, 73, 73);
+}
